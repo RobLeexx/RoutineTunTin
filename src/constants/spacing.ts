@@ -1,13 +1,12 @@
 export const spacing = {
-  xs: 6,
-  sm: 10,
+  xs: 8,
+  sm: 12,
   md: 16,
   lg: 20,
   xl: 24,
-  xxl: 32,
-  pill: 999,
-  radiusSm: 14,
-  radiusMd: 20,
-  radiusLg: 28,
-};
-
+  '2xl': 32,
+  '3xl': 40,
+  '4xl': 56,
+  screen: 24,
+  touch: 48,
+} as const;

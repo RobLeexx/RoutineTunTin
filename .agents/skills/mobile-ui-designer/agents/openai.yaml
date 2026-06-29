@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobile UI Designer"
+  short_description: "Premium React Native UI guidance"
+  default_prompt: "Use $mobile-ui-designer to refine this React Native screen into a premium mobile experience."

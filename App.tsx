@@ -1,19 +1,10 @@
-import { AppNavigator } from './src/app/AppNavigator';
-import { useThemeMode } from './src/hooks/useThemeMode';
+import { AppProvider } from './src/app/AppProvider';
+import { HomeScreen } from './src/screens/HomeScreen';
 
 export default function App() {
-  const { colors, isDark, isReady, mode, toggleMode } = useThemeMode();
-
-  if (!isReady) {
-    return null;
-  }
-
   return (
-    <AppNavigator
-      colors={colors}
-      isDark={isDark}
-      mode={mode}
-      onToggleTheme={toggleMode}
-    />
+    <AppProvider>
+      <HomeScreen />
+    </AppProvider>
   );
 }

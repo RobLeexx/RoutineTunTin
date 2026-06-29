@@ -1,69 +1,37 @@
-export type ThemeMode = 'light' | 'dark';
+import { ThemeColors, ThemeMode } from '../types/theme';
 
-export type ThemeColors = {
-  background: string;
-  surface: string;
-  surfaceAlt: string;
-  surfaceMuted: string;
-  text: string;
-  textMuted: string;
-  textSoft: string;
-  accent: string;
-  accentSoft: string;
-  accentContrast: string;
-  border: string;
-  success: string;
-  danger: string;
-  dangerSoft: string;
-  shadow: string;
-  overlay: string;
-};
+const brandColors = {
+  primary: '#FF4F00',
+  primarySoft: '#F8F4F0',
+  secondary: '#201515',
+} as const;
 
-const common = {
-  accent: '#5C8DFF',
-  accentContrast: '#F8FBFF',
-  success: '#2E9E72',
-  danger: '#D66573',
-};
-
-export const themeColors: Record<ThemeMode, ThemeColors> = {
-  light: {
-    background: '#F4F6FB',
-    surface: '#FFFFFF',
-    surfaceAlt: '#EEF3FF',
-    surfaceMuted: '#F8FAFF',
-    text: '#182033',
-    textMuted: '#5A657D',
-    textSoft: '#8A94AA',
-    accent: common.accent,
-    accentSoft: '#E2EBFF',
-    accentContrast: common.accentContrast,
-    border: '#E1E8F5',
-    success: common.success,
-    danger: common.danger,
-    dangerSoft: '#FFE8EC',
-    shadow: 'rgba(17, 24, 39, 0.08)',
-    overlay: 'rgba(15, 23, 42, 0.32)',
-  },
+const palettes: Record<ThemeMode, Omit<ThemeColors, 'primary' | 'primarySoft' | 'secondary'>> = {
   dark: {
-    background: '#111827',
-    surface: '#1A2234',
-    surfaceAlt: '#202B42',
-    surfaceMuted: '#152032',
-    text: '#F5F7FC',
-    textMuted: '#BBC5D9',
-    textSoft: '#93A0BA',
-    accent: '#7DA7FF',
-    accentSoft: '#243454',
-    accentContrast: '#F5F9FF',
-    border: '#2A3752',
-    success: '#52C39A',
-    danger: '#F08A97',
-    dangerSoft: '#3C2630',
-    shadow: 'rgba(0, 0, 0, 0.28)',
-    overlay: 'rgba(2, 6, 23, 0.56)',
+    background: '#201515',
+    backgroundAccent: '#2F2A26',
+    border: 'rgba(197,192,177,0.24)',
+    mutedText: '#C5C0B1',
+    surface: 'rgba(255,254,251,0.06)',
+    surfaceMuted: 'rgba(255,254,251,0.10)',
+    surfaceStrong: 'rgba(255,254,251,0.14)',
+    text: '#FFFEFB',
+    textInverse: '#FFFEFB',
+  },
+  light: {
+    background: '#FFFEFB',
+    backgroundAccent: '#F8F4F0',
+    border: 'rgba(32,21,21,0.12)',
+    mutedText: '#605D52',
+    surface: 'rgba(248,244,240,0.9)',
+    surfaceMuted: 'rgba(248,244,240,0.96)',
+    surfaceStrong: 'rgba(255,254,251,0.98)',
+    text: '#201515',
+    textInverse: '#FFFEFB',
   },
 };
 
-export const getThemeColors = (mode: ThemeMode) => themeColors[mode];
-
+export const getThemeColors = (mode: ThemeMode): ThemeColors => ({
+  ...brandColors,
+  ...palettes[mode],
+});

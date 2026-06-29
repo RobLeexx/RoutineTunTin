@@ -1,6 +1,14 @@
 # Routine TunTin
 
-Minimalist mobile Todo app starter built with React Native, Expo, and TypeScript.
+Minimal React Native + Expo + TypeScript starter focused on theme switching, atomic design, and global design tokens.
+
+## Features
+
+- Light/dark theme mode
+- Theme persistence with AsyncStorage
+- Atomic Design structure
+- Global colors, spacing, radius, and font tokens
+- Space Grotesk font
 
 ## Install
 
@@ -13,29 +21,3 @@ npm install
 ```bash
 npx expo start
 ```
-
-## Added dependency
-
-```bash
-npx expo install @react-native-async-storage/async-storage
-```
-
-## Structure
-
-```text
-src/
-  app/
-  components/
-  constants/
-  hooks/
-  screens/
-  types/
-  utils/
-```
-
-## Included in this base version
-
-- Create, edit, delete, and complete tasks
-- Persist tasks locally with AsyncStorage
-- Persist light/dark theme mode
-- Reusable Bento-style cards and modal form
