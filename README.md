@@ -1,22 +1,26 @@
 # Routine TunTin
 
-Minimal React Native + Expo + TypeScript starter focused on theme switching, atomic design, and global design tokens.
+UI de React Native + Expo + TypeScript para crear rutinas y habitos con React Native Paper.
 
-## Features
+## Incluye
 
-- Light/dark theme mode
-- Theme persistence with AsyncStorage
-- Atomic Design structure
-- Global colors, spacing, radius, and font tokens
-- Space Grotesk font
+- Pantalla `Crear rutina` en espanol
+- Selector de tipo:
+  - Si / No
+  - Cantidad objetivo
+  - Cantidad con minimo
+- Vista previa con estado pendiente, completada o superada
+- Botones de check y lapiz para simular el seguimiento diario
+- Tema claro/oscuro persistido con AsyncStorage
+- Tokens globales de color, espaciado, radio y tipografia
 
-## Install
+## Instalar
 
 ```bash
 npm install
 ```
 
-## Run
+## Ejecutar
 
 ```bash
 npx expo start

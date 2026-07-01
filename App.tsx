@@ -1,10 +1,10 @@
 import { AppProvider } from './src/app/AppProvider';
-import { HomeScreen } from './src/screens/HomeScreen';
+import { CreateRoutineScreen } from './src/screens/CreateRoutineScreen';
 
 export default function App() {
   return (
     <AppProvider>
-      <HomeScreen />
+      <CreateRoutineScreen />
     </AppProvider>
   );
 }

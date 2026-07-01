@@ -5,9 +5,10 @@ import {
   useFonts,
 } from '@expo-google-fonts/space-grotesk';
 import { createContext, ReactNode, useEffect, useMemo, useState } from 'react';
+import { PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { createTheme } from '../constants/theme';
+import { createPaperTheme, createTheme } from '../constants/theme';
 import { getStoredThemeMode, setStoredThemeMode } from '../storage/themeStorage';
 import { AppTheme, ThemeMode } from '../types/theme';
 
@@ -80,7 +81,9 @@ export function AppProvider({ children }: AppProviderProps) {
 
   return (
     <SafeAreaProvider>
-      <ThemeModeContext.Provider value={value}>{children}</ThemeModeContext.Provider>
+      <ThemeModeContext.Provider value={value}>
+        <PaperProvider theme={createPaperTheme(value.theme)}>{children}</PaperProvider>
+      </ThemeModeContext.Provider>
     </SafeAreaProvider>
   );
 }
